@@ -1,0 +1,26 @@
+{
+  "name": "来个图",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description" : "chrome extension demo",
+  "icons": {
+    "16": "icons/logo.png",
+    "48": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["lib/zepto.js", "content.js"]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "cookies",
+    "<all_urls>"
+  ]
+}
